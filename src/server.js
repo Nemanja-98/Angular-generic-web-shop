@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 4000;
-const products = require('./assets/products');
+const products = require('./assets/products.ts');
 
 
 app.use(bodyParser.json());

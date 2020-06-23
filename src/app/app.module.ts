@@ -16,6 +16,7 @@ import { ShopReducer } from './store/reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { ShopEffects } from './store/effects';
 import { ProductComponent } from './components/product/product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ProductComponent } from './components/product/product.component';
     HomeComponent,
     HeaderComponent,
     ProductComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,

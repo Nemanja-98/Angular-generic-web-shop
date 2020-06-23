@@ -1,7 +1,8 @@
 
-import Product from './Product'
+//import Product from './Product'
 
-const staticArray :Product[] = [{
+const staticArray = [ //:Product[] = [
+  {
     "name": "Berries",
     "price": 23.54,
     "image": "/assets/images/berries.jpeg",
