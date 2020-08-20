@@ -1,0 +1,32 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Hi there! Please {{text}}!</h4>
+      <button type="button" class="close btn-danger" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div *ngIf="text==='Log in'; else elseBlock">
+       <div class="divLogIn">
+        <input type='text' class="inputUserName" placeholder="enter username here"/>
+        <input type='text' class="inputPassowrd" placeholder="enter password here"/>
+       </div>
+      </div>
+      
+      <ng-template #elseBlock>
+        <div class="divSignUp">
+          <input type='text' class="inputUserName" placeholder="enter username here" />
+          <input type='text' class="inputPassowrd" placeholder="enter password here" /><br>
+          <input type='email' class="inputEmail" placeholder="someone@example.com" /><br>
+          <input type='text' class="inputAdress" placeholder="enter address here" />
+          <input type='text' class="inputPhone" placeholder="enter phone number here" />
+        </div>
+      </ng-template>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Save click')">Save</button>
+      <button type="button" class="btn btn-danger" (click)="d('Cross click')">Canel</button>
+    </div>
+  </ng-template>
+
+<a (click)="open(content)">{{text}}</a>

@@ -1,0 +1,39 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.product-image-holder{
+    align-self: stretch;
+    padding: 2px ;
+}
+
+.product-image{
+    padding-bottom: 10px;
+    min-width: 75%;
+    min-height:75%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product-details{
+    margin: 5px;
+}
+
+.product-details__name{
+
+}
+
+.product-details__price{
+    font: bold;
+    font-size: medium;
+}
+
+.product-description{
+    padding-right: 80px;
+}
+
+.product-actions{
+
+}

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { GetItems } from '../../store/action';
-import { ProductComponent } from '../product/product.component';
+//import { ProductComponent } from '../product/product.component';
+import { Observable } from 'rxjs';
+import Product from 'src/assets/Product';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +11,15 @@ import { ProductComponent } from '../product/product.component';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  constructor(private store: Store<{ items: ProductComponent[]; cart: [] }>) {
-   // store.pipe(select('shop')).subscribe(data => (this.items = data.items));
+  products$ : Observable<Product[]>; 
+  constructor(private store: Store<{ items: Product[]; cart: [] }>) {
+    // this.products$ = store.pipe(select('items'));
+    // console.log(this.products$);
+    store.pipe(select('shop')).subscribe(data => {this.items = data.items});
+ 
   }
 
-  items: ProductComponent[] = [];
+  items: Product[] = [];
 
   ngOnInit() {
     this.store.dispatch(new GetItems());

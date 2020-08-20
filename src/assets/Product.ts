@@ -14,3 +14,4 @@ export class Product {
 }
 
 export default Product;
+//  u sustini moze da bude i interfejs; comeback to this l8er

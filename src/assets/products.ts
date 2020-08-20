@@ -3,8 +3,8 @@
 
 const staticArray = [ //:Product[] = [
   {
-    "name": "Berries",
-    "price": 23.54,
+    "name": "Strawberries",
+    "price": 2.54,
     "image": "/assets/images/berries.jpeg",
     "description": "The bestest fruit known to man. Sweet yet sour but beautiful"
   },
@@ -28,15 +28,16 @@ const staticArray = [ //:Product[] = [
   },
   {
     "name": "Apples",
-    "price": 10.33,
+    "price": 5.33,
     "image": "/assets/images/apple-item.png",
     "description": "Sliced and served with your salad. Served as snacks midway through the day"
   },
   {
     "name": "Sharifa",
-    "price": 10.33,
+    "price": 8.33,
     "image": "/assets/images/unknown.jpeg",
     "description": "A great fruit, also known as custard apple"
-  }];
+  }
+];
 
 module.exports = staticArray 

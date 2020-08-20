@@ -10,6 +10,7 @@ import Product from 'src/assets/Product';
     export function ShopReducer(state = initialState, action: ActionsUnion) {
       switch (action.type) {
         case ActionTypes.LoadSuccess:
+          console.log("LoadSuccess:",state,action.payload);
           return {
             ...state,
             items: [...action.payload]

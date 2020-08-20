@@ -18,6 +18,7 @@ export class ShopEffects {
     mergeMap(() =>
       this.productsService.getAll().pipe(
         map(products => {
+          console.log(products," products ssss");
           return { type: ActionTypes.LoadSuccess, payload: products };
         }),
         catchError(() => EMPTY)

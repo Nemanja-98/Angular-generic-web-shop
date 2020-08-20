@@ -17,6 +17,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { ShopEffects } from './store/effects';
 import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdModalConfig } from './components/modal-config/modal-config.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     HeaderComponent,
     ProductComponent,
     ProductListComponent,
+    NgbdModalConfig,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     HttpClientModule,
     StoreModule.forRoot({ shop: ShopReducer }),
     EffectsModule.forRoot([ShopEffects]),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
