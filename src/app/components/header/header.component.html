@@ -14,9 +14,45 @@
         </ngbd-modal-config>
       </li>
       <li>
-        <img src="/assets/images/shopping-bag.png" alt="cart" />
+        <img src="/assets/images/shopping-bag.png" (click)="cartToggle()" alt="cart" />
         <span class="badge" *ngIf="cart.length > 0">{{ cart.length }}</span>
       </li>
     </ul>
   </div>
 </header>
+<div *ngIf="cartClicked" class="divCartContents">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 divProizvod">
+        Name of product        
+      </div>
+      <div class="col-5 divQty">
+        Quantity        
+      </div>
+      <div class="col-3 divPrice">
+        Price        
+      </div>
+    </div>
+
+    <div class="container scrollOverflow"> 
+          <div class="row" key={el.model}>
+            <div class="col-4 divProizvod">P1</div>
+            <div class="col-5 divQty">
+              <button class="btnCart">
+                -
+              </button>
+              1 000
+              <button class="btnCart">
+                +
+              </button>
+            </div>
+            <div class="col-3 divPrice">
+             1000000
+            </div>
+          </div>
+         
+    </div>
+
+    
+  </div>
+</div>

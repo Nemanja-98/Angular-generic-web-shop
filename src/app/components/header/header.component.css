@@ -1,4 +1,6 @@
 header {
+position: fixed;
+width: 100%;
 display: flex;
 background-color: white;
 margin: 0;
@@ -68,9 +70,47 @@ img {
  justify-content: center;
  align-items: center;
  position: absolute;
- top: 0;
- right: -10px;
+ top: 6px;
+ right: 10px;
  border-radius: 50%;
 }
 
-  
+.divCartContents{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: fixed;
+    right: 0.01%;
+    top: 15.3%;
+    min-height: 50px;
+    max-height: 500px;
+    min-width: 400px;
+    background: linear-gradient(
+        120deg,
+        rgba(52, 186, 219, 0.9878326330532213) 44%,
+        rgba(0, 255, 190, 1) 100%
+       );
+    border: darkcyan 1px solid;
+}
+
+.divQty{
+    text-align: center;
+}
+
+
+.scrollOverflow {
+    overflow-y: scroll;
+    margin-bottom: 10px;
+    max-height: 200px;
+}
+
+.btnCart {
+    margin-left: 5px;
+    margin-right: 2px;
+    background-color: chartreuse;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: "Rajdhani";
+    font-weight: 900;
+  }
