@@ -8,6 +8,7 @@ import Product from 'src/assets/Product';
     };
     
     export function ShopReducer(state = initialState, action: ActionsUnion) {
+      
       switch (action.type) {
         case ActionTypes.LoadSuccess:
           console.log("LoadSuccess:",state,action.payload);
@@ -17,16 +18,37 @@ import Product from 'src/assets/Product';
           };
     
         case ActionTypes.Add:
-          return {
-            ...state,
-            cart: [...state.cart, action.payload]
-          };
+          const matchingElements = state.cart.filter(item =>item.name == action.payload.name);
+          if(matchingElements.length===0){
+           return {
+              ...state,
+              cart: [...state.cart, action.payload]
+            };
+          }else{
+            return { ...state, cart:[...state.cart.map( (item) =>  {
+              if(item.name==action.payload.name) return {...item, quantity: item.quantity+1 };
+              return item;
+              })]
+            } 
+          }
+
     
         case ActionTypes.Remove:
+          console.log("reducer removing items:",action);
           return {
             ...state,
             cart: [...state.cart.filter(item => item.name !== action.payload.name)]
           };
+        
+        case ActionTypes.UpdateInCart:
+          console.log("update item inCart state");
+          return {
+            ...state,
+            cart:[...state.cart.map( item => {
+              if(item.name===action.payload.name) return {...item, inCart:false };
+              return item;
+            })]
+          }
     
         default:
           return state;

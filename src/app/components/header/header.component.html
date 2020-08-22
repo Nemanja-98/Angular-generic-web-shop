@@ -24,35 +24,32 @@
   <div class="container">
     <div class="row">
       <div class="col-4 divProizvod">
-        Name of product        
+        Name of product
       </div>
       <div class="col-5 divQty">
-        Quantity        
+        Quantity
       </div>
       <div class="col-3 divPrice">
-        Price        
+        Price
       </div>
     </div>
 
-    <div class="container scrollOverflow"> 
-          <div class="row" key={el.model}>
-            <div class="col-4 divProizvod">P1</div>
-            <div class="col-5 divQty">
-              <button class="btnCart">
-                -
-              </button>
-              1 000
-              <button class="btnCart">
-                +
-              </button>
-            </div>
-            <div class="col-3 divPrice">
-             1000000
-            </div>
-          </div>
-         
+    <div class="container scrollOverflow">
+      <div class="row" key={index} *ngFor="let el of cart">
+        <div class="col-4 divProizvod">{{el.name}}</div>
+        <div class="col-5 divQty">
+          <button class="btnCart" (click)="btnClicked($event,el.name,-1,event)">
+            -
+          </button>
+          <label class="lQty">{{el.quantity}}</label>
+          <button class="btnCart" (click)="btnClicked($event,el.name,1,event)">
+            +
+          </button>
+        </div>
+        <div class="col-3 divPrice">
+          {{el.price}}
+        </div>
+      </div>
     </div>
-
-    
   </div>
 </div>
