@@ -34,14 +34,12 @@ import Product from 'src/assets/Product';
 
     
         case ActionTypes.Remove:
-          console.log("reducer removing items:",action);
           return {
             ...state,
             cart: [...state.cart.filter(item => item.name !== action.payload.name)]
           };
         
         case ActionTypes.UpdateInCart:
-          console.log("update item inCart state");
           return {
             ...state,
             cart:[...state.cart.map( item => {

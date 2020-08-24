@@ -35,9 +35,6 @@ export class HeaderComponent implements OnInit {
 
       this.store.dispatch(update({payload:{name:product_name}}));
       this.store.dispatch(remove({payload:{name:product_name}}));
-
-      
-      console.log("yooo removed imtes?",this.cart);
     }
   }
 }

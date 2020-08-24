@@ -18,7 +18,7 @@ app.use(cors());
 //     'Access-Control-Allow-Headers',
 //     'Origin, X-Requested-With, Content-Type, Accept'
 //   );
-//   next(); //next middleware
+//   next(); 
 // });
 
 app.get('/products', (req, res) => {

@@ -11,7 +11,7 @@ import Product from '../../../assets/Product'
 export class ProductComponent implements OnInit {
   constructor(private store: Store<{ items: []; cart: [] }>) {
     store.pipe(select('shop')).subscribe(data => {this.currentCart = data.cart})
-    console.log(this.currentCart);
+
   }
 
   currentCart :Product[]= [];
@@ -31,8 +31,4 @@ export class ProductComponent implements OnInit {
     this.inCart = false;
   }
   ngOnInit() :void  {}
-
-  ngOnChanges() {
-    console.log("changed me");
-  }
 }

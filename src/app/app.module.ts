@@ -19,6 +19,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfig } from './components/modal-config/modal-config.component';
+import { OrderComponent } from './components/order/order.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NgbdModalConfig } from './components/modal-config/modal-config.componen
     ProductComponent,
     ProductListComponent,
     NgbdModalConfig,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

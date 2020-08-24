@@ -1,0 +1,32 @@
+<div class="container card divOrderComponent">
+    <div class="row">
+        <div class="col-4">
+            Name
+        </div>
+        <div class="col-4">
+            Quantity
+        </div>
+        <div class="col-4">
+            Price
+        </div>
+
+    </div>
+     <!-- ng for ovde *ngFor="let item of contents" -->
+    <div class="card" *ngFor="let item of contents">
+        <div class="row">
+            <div class="col-4">
+                p1 {{item.name}}
+            </div>
+            <div class="col-4">
+                2 {{item.quantity}}
+            </div>
+            <div class="col-4">
+                22.22 {{item.price}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12"> 
+        <label class="lTotal">Total:</label>
+    </div>
+</div>
