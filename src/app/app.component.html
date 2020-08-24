@@ -1,6 +1,7 @@
 <div>
     <app-header ></app-header>
     <app-home *ngIf="_router.url != '/order'"></app-home>
+    <app-user></app-user>
     <!-- route /order -->
     <!-- <app-order></app-order> -->
     <div *ngIf="_router.url == '/order'">

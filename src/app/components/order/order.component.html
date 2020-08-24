@@ -1,4 +1,10 @@
 <div class="container card divOrderComponent">
+    <div class="row badge badge-success" *ngIf="contents.length!=0">
+        <h2>Finalize order</h2>
+    </div>
+    <div class="row badge badge-danger" *ngIf="contents.length==0">
+        <h2>Oh it seems your cart is empty...</h2>
+    </div>
     <div class="row">
         <div class="col-4">
             Name
@@ -11,22 +17,31 @@
         </div>
 
     </div>
-     <!-- ng for ovde *ngFor="let item of contents" -->
-    <div class="card" *ngFor="let item of contents">
+    <!-- ng for ovde *ngFor="let item of contents" -->
+    <div class="card divOrders" *ngFor="let item of contents">
         <div class="row">
             <div class="col-4">
-                p1 {{item.name}}
+                {{item.name}}
             </div>
             <div class="col-4">
-                2 {{item.quantity}}
+                {{item.quantity}}kg
             </div>
             <div class="col-4">
-                22.22 {{item.price}}
+                {{item.price}}
             </div>
         </div>
     </div>
 
-    <div class="col-12"> 
-        <label class="lTotal">Total:</label>
+    <div class="col-12">
+        <label class="lTotal">Total:{{ total}}</label>
+    </div>
+    <div class="row divButtons">
+        <div class="">
+            <button class="btn-success">Confirm purchase</button>
+        </div>
+
+        <div class="">
+            <button class="btn-danger">Cancel purchase</button>
+        </div>
     </div>
 </div>

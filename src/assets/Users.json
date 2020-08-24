@@ -1,0 +1,11 @@
+{
+    "Users" : [
+        {
+            "id":1,
+            "username": "nemanja",
+            "password": "123456",
+            "address":  "Ulica 123, 18000 Nis",
+            "phone":   123456789
+        }
+    ]
+}

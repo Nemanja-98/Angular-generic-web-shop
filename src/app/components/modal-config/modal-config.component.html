@@ -9,14 +9,14 @@
       <div *ngIf="text==='Log in'; else elseBlock">
        <div class="divLogIn">
         <input type='text' class="inputUserName" placeholder="enter username here"/>
-        <input type='text' class="inputPassowrd" placeholder="enter password here"/>
+        <input type='password' class="inputPassowrd" placeholder="enter password here"/>
        </div>
       </div>
       
       <ng-template #elseBlock>
         <div class="divSignUp">
           <input type='text' class="inputUserName" placeholder="enter username here" />
-          <input type='text' class="inputPassowrd" placeholder="enter password here" /><br>
+          <input type='password' class="inputPassowrd" placeholder="enter password here" /><br>
           <input type='email' class="inputEmail" placeholder="someone@example.com" /><br>
           <input type='text' class="inputAdress" placeholder="enter address here" />
           <input type='text' class="inputPhone" placeholder="enter phone number here" />
@@ -24,7 +24,7 @@
       </ng-template>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success" (click)="c('Save click')">Save</button>
+      <button type="button" class="btn btn-success" (click)="newMessage(event)">Save</button>
       <button type="button" class="btn btn-danger" (click)="d('Cross click')">Canel</button>
     </div>
   </ng-template>

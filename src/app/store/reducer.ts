@@ -1,7 +1,8 @@
 //import {Action} from '@ngrx/store';
 import { ActionsUnion, ActionTypes } from '../store/action';
 import Product from 'src/assets/Product';
-    
+
+
     export const initialState = {
       items : [],
       cart : [] 

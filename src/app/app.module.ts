@@ -20,7 +20,8 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfig } from './components/modal-config/modal-config.component';
 import { OrderComponent } from './components/order/order.component';
-
+import { UserComponent } from './components/user/user.component';
+import { UsernameService} from './components/user/username.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { OrderComponent } from './components/order/order.component';
     ProductListComponent,
     NgbdModalConfig,
     OrderComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,9 @@ import { OrderComponent } from './components/order/order.component';
     EffectsModule.forRoot([ShopEffects]),
     NgbModule,
   ],
-  providers: [],
+  providers: [
+    UsernameService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

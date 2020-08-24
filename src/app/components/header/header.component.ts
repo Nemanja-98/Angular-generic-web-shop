@@ -12,11 +12,12 @@ import { ActionTypes } from 'src/app/store/action';
 })
 export class HeaderComponent implements OnInit {
   cartClicked : Boolean = false;
+  
+  cart :Product[]= [] ;
   constructor(private store: Store<{ items: []; cart: [] }>) {
     store.pipe(select('shop')).subscribe(data => {this.cart = data.cart});
   }
 
-  cart :Product[]= [] ;
   ngOnInit(): void {
   }
 

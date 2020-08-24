@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="card">
+        <label class="badge badge-success">Username:{{username}}</label>
+    </div>
+    <div *ngFor='let user of users'>
+        <div>{{user.username}}</div>
+        <div>{{user.password}}</div>
+    </div>
+</div>
