@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../../assets/Product'
 
 import { select, Store, createAction, props } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { ShopReducer } from '../../store/reducer'
 
 @Component({
   selector: 'app-order',
@@ -10,7 +12,7 @@ import { select, Store, createAction, props } from '@ngrx/store';
 })
 export class OrderComponent implements OnInit {
 
-  constructor(private store: Store<{ items: []; cart: [] }>) {
+  constructor(private store: Store<{ items: []; cart: [] }>, private router: Router) {
     store.pipe(select('shop')).subscribe(data => {this.contents = data.cart});
    }
   contents : Product[];
@@ -21,4 +23,12 @@ export class OrderComponent implements OnInit {
     })
   }
 
+  btnConfirm(){
+    this.contents = [];
+    this.total = 0; 
+    setTimeout(() => {
+      this.router.navigate([''])  
+    }, 1000);
+    
+  }
 }
