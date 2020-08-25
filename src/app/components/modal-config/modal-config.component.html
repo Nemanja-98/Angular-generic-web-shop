@@ -7,19 +7,26 @@
     </div>
     <div class="modal-body">
       <div *ngIf="text==='Log in'; else elseBlock">
-       <div class="divLogIn">
-        <input type='text' class="inputUserName" placeholder="enter username here"/>
-        <input type='password' class="inputPassowrd" placeholder="enter password here"/>
+       <div class="container divLogIn">
+         <label class="col-3">Username:</label>
+        <input type='text' class="inputUserName col-6" placeholder="enter username here"/><br>
+        <label class="col-3">Password:</label>
+        <input type='password' class="inputPassowrd col-6" placeholder="enter password here"/>
        </div>
       </div>
       
       <ng-template #elseBlock>
-        <div class="divSignUp">
-          <input type='text' class="inputUserName" placeholder="enter username here" />
-          <input type='password' class="inputPassowrd" placeholder="enter password here" /><br>
-          <input type='email' class="inputEmail" placeholder="someone@example.com" /><br>
-          <input type='text' class="inputAdress" placeholder="enter address here" />
-          <input type='text' class="inputPhone" placeholder="enter phone number here" />
+        <div class="divSignUp container">
+          <label  class="col-3">Username:</label>
+          <input type='text' class="inputUserName col-6" placeholder="enter username here" /><br>
+          <label class="col-3">Password:</label>
+          <input type='password' class="inputPassowrd col-6" placeholder="enter password here" /><br>
+          <label class="col-3">Email:</label>
+          <input type='email' class="inputEmail col-6" placeholder="someone@example.com" /><br>
+          <label class="col-3">Adress:</label>
+          <input type='text' class="inputAdress col-6" placeholder="enter address here" /><br>
+          <label class="col-3">Phone:</label>
+          <input type='text' class="inputPhone col-6" placeholder="enter phone number here" />
         </div>
       </ng-template>
     </div>
