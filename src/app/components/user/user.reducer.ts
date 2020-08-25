@@ -57,9 +57,3 @@ export const {
     selectAll,
     selectTotal,
 } = userAdapter.getSelectors(getUserState);
-
-
-
-
-
-

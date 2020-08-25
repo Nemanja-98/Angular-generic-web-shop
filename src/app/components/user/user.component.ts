@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 //import { Observable} from 'rxjs/Observable';
 import { Store} from '@ngrx/store';
 
@@ -14,8 +14,9 @@ import { UsernameService } from './username.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  username: string;
+  @Input() signedOut : boolean;
+  @Output() newUsernameEvent = new EventEmitter<string>();
+  username : string = '';
   users : Observable<any>
   constructor(private store:Store<fromUser.State>, private us:UsernameService) { }
 
@@ -33,11 +34,15 @@ export class UserComponent implements OnInit {
       username: username,
       password: password
     }
-
+    
+    console.log("createUser",username);
+    this.newUsernameEvent.emit(username);
     this.store.dispatch( new actions.Create(user));
   }
 
   updateUser(id,username,password){
+    console.log("updateUser");
+    this.newUsernameEvent.emit(username);
     this.store.dispatch( new actions.Update( id,{username:username,password:password}));
   }
 

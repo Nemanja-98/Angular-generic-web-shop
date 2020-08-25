@@ -6,12 +6,18 @@
   <div class="nav">
     <ul>
       <li>
-        <ngbd-modal-config text="Log in" class="modalLogin">
+        <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container"></app-user>
+      </li>
+      <li>
+        <ngbd-modal-config *ngIf="!isLoggedIn"text="Log in" class="modalLogin">
         </ngbd-modal-config>
       </li>
       <li>
-        <ngbd-modal-config text="Sign up" class="modalSignup">
+        <ngbd-modal-config *ngIf="!isLoggedIn" text="Sign up" class="modalSignup">
         </ngbd-modal-config>
+      </li>
+      <li *ngIf="isLoggedIn">
+        <a (click)="loggedIn('')">Sign out</a>
       </li>
       <li>
         <img src="/assets/images/shopping-bag.png" (click)="cartToggle()" alt="cart" />

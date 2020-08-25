@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="card">
-        <label class="badge badge-success">Username:{{username}}</label>
+    <div class="" *ngIf="signedOut">
+        <label *ngIf="username!=''"class="badge badge-success">Username:{{username}}</label>
     </div>
-    <div *ngFor='let user of users'>
+    <!-- <div *ngFor='let user of users'>
         <div>{{user.username}}</div>
         <div>{{user.password}}</div>
-    </div>
+    </div> -->
 </div>
