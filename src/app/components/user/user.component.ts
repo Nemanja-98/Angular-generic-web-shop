@@ -17,20 +17,19 @@ export class UserComponent implements OnInit {
   @Input() signedOut : boolean;
   @Output() newUsernameEvent = new EventEmitter<string>();
   username : string = '';
-  users : Observable<any>
+  users : Observable<any>;
   constructor(private store:Store<fromUser.State>, private us:UsernameService) { }
 
   ngOnInit(): void {
     this.users = this.store.select(fromUser.selectAll);
-
-    this.us.currentUsername.subscribe(username => {
+    this.us.currentUsername.subscribe(username => { 
       this.createUser(username,'123');
       this.username = username})
   }
 
   createUser(username:string,password:string){
     const user : fromUser.User = {
-      id: '',
+      id: new Date().getUTCMilliseconds().toString(),
       username: username,
       password: password
     }

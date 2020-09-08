@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'web-shop';
   
-  constructor(private _router: Router){
+  constructor(public _router: Router){
     
   }
 }

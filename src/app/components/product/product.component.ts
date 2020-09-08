@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { select, Store, } from '@ngrx/store';
 import { AddToCart, RemoveFromCart } from '../../store/action';
 import Product from '../../../assets/Product'
+import { AppState } from 'src/assets/Shop';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +10,7 @@ import Product from '../../../assets/Product'
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  constructor(private store: Store<{ items: []; cart: [] }>) {
+  constructor(private store: Store<AppState>) {
     store.pipe(select('shop')).subscribe(data => {this.currentCart = data.cart})
 
   }

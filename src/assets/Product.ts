@@ -4,13 +4,14 @@ export class Product {
     price : number
     image : string
     description : string
-    constructor(name : string, price : number, image : string, desc : string){
+    quantity : number
+    constructor(name : string, price : number, image : string, desc : string,qty :number){
         this.name = name;
         this.price = price;
         this.image = image;
-        this.description = desc
+        this.description = desc;
+        this.quantity = qty
     }
-
 }
 
 export default Product;

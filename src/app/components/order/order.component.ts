@@ -4,6 +4,7 @@ import { Product } from '../../../assets/Product'
 import { select, Store, createAction, props } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { ShopReducer } from '../../store/reducer'
+import { AppState } from 'src/assets/Shop';
 
 @Component({
   selector: 'app-order',
@@ -12,9 +13,10 @@ import { ShopReducer } from '../../store/reducer'
 })
 export class OrderComponent implements OnInit {
 
-  constructor(private store: Store<{ items: []; cart: [] }>, private router: Router) {
+  constructor(private store: Store<AppState>, private router: Router) {
     store.pipe(select('shop')).subscribe(data => {this.contents = data.cart});
    }
+   
   contents : Product[];
   total=0
   ngOnInit(): void {

@@ -4,6 +4,7 @@ import { GetItems } from '../../store/action';
 //import { ProductComponent } from '../product/product.component';
 import { Observable } from 'rxjs';
 import Product from 'src/assets/Product';
+import { AppState } from 'src/assets/Shop'
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,14 @@ import Product from 'src/assets/Product';
 })
 export class HomeComponent implements OnInit {
   products$ : Observable<Product[]>; 
-  constructor(private store: Store<{ items: Product[]; cart: [] }>) {
+  constructor(private store: Store<AppState>) {
     // this.products$ = store.pipe(select('items'));
     // console.log(this.products$);
     store.pipe(select('shop')).subscribe(data => {this.items = data.items});
  
   }
 
-  items: Product[] = [];
+  items: Product[] ;
 
   ngOnInit() {
     this.store.dispatch(new GetItems());

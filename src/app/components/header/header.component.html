@@ -44,11 +44,11 @@
       <div class="row" key={index} *ngFor="let el of cart">
         <div class="col-4 divProizvod">{{el.name}}</div>
         <div class="col-5 divQty">
-          <button class="btnCart" (click)="btnClicked($event,el.name,-1,event)">
+          <button class="btnCart" (click)="btnClicked($event,el.name,-1)">
             -
           </button>
           <label class="lQty">{{el.quantity}}</label>
-          <button class="btnCart" (click)="btnClicked($event,el.name,1,event)">
+          <button class="btnCart" (click)="btnClicked($event,el.name,1)">
             +
           </button>
         </div>

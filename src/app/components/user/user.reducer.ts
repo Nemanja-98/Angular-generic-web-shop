@@ -34,6 +34,7 @@ export function userReducer (
     switch (action.type){
 
         case actions.CREATE:
+            console.log("createUser");
             return userAdapter.addOne(action.user,state);
 
         case actions.UPDATE:

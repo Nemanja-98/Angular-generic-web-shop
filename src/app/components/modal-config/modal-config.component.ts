@@ -27,9 +27,9 @@ export class NgbdModalConfig {
   }
 
   
-  newMessage(ev) {
-    const input= document.querySelector('.inputUserName')
-    const username = input.value;
+  newMessage() {
+    const input : HTMLInputElement = document.querySelector('.inputUserName')
+    const username :string = input.value;
     console.log("event",input,username);
     this.us.changeUsername(username);
     this.modalService.dismissAll();
