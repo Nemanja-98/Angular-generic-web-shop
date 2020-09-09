@@ -16,7 +16,14 @@
     width:50%;
     text-align: center;
     align-items: center;
+    word-wrap: break-word;
 }
+@media only screen and (max-width: 1360px) {
+span{
+  font-size: 0;
+}
+}
+
 .ulSocial-network {
     display: flex;
     flex-direction: row;
