@@ -92,3 +92,274 @@
       transform: translateX(0px);
     }
 }
+
+
+
+/* CARD STYLES****************************************************************************************************************/
+.sectionCards{
+    background-blend-mode: darken;
+    background-color:#EAE7DC;
+    border: 0.5px black solid;
+    text-align: center;
+}
+
+.infocardContainer * {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: 300;
+  }
+  h2 {
+    font-weight: 600; font-style: italic; font-family: "Fira Sans Condensed", sans-serif;
+  }
+  header {
+    height: 2em;
+    background-color: #111122;
+    margin: 0 0 0 0;
+    padding: auto;
+    font-size: 2em;
+    text-align: center;
+    line-height: 2em;
+    color: white;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:visited {
+    color: #555566;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .infocardContainer {
+    display: flex;
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+    background: rgb(0,159,255);
+    background: linear-gradient(121deg, rgba(255,255,255,0) 13%, rgba(0,159,255,1) 100%);
+    transition: all 550ms ease-in;
+    transition-delay: 1s;
+    margin: auto;
+    margin-top: 50px;
+    --margin-top: 50px;
+  }
+  .infocardContainer:hover {
+    width: 400px;
+    border-radius: 100px 10px 100px 100px;
+    transition: all 1s ease-out;
+  }
+  
+  .infocardContainer div {
+    text-color: white;
+    flex-shrink: 1;
+    width: 100%;
+    --background-color: green;
+  }
+  .infocardContainer div * {
+    display: flex;
+    --flex: inherit;
+    overflow: hidden;
+    text-overflow: hidden;
+    --background-color: yellow;
+    color: white;
+    white-space: nowrap;
+    width: 0;
+    height: auto;
+    transition: all 600ms ease-in;
+    transition-delay: 1s;
+  }
+  .infocardContainer:hover div *{
+    --background-color: purple;
+    display: flex;
+    visibility: visible;
+    transition: all 1s ease-out;
+    transition-delay: 550ms;
+    width: 80%;
+    height: auto;
+  }
+  
+  .infocardContainer #main, .infocardContainer #main img{
+    --background-color: red;
+    height: 150px;
+    width: 150px;
+    padding-right: 10px;
+    border-radius: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .infocardContainer #main img{
+    height: 130px;
+    width: 130px;
+    transition: none;
+    display: float;
+    position: relative;
+    border: 10px solid white;
+    margin: 0 0 0 0; padding: 0 0 0 0;
+  }
+  .infocardContainer #textbois {
+    position: relative;
+  }
+  .infocardContainer #textbois #hotlinks {
+    max-width: 40%;
+    max-height: 30px;
+    
+    --background-color: white;
+    position:absolute;
+    bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 13px;
+  }
+  .infocardContainer #textbois #hotlinks * {
+    background-color: white;
+    max-width: 30px;
+    --margin: 0 1px 0 1px;
+    border-radius: 25px;
+  }
+/* CARD STYLES ENDS***********************************************************************************************************/
+/* SECTION AUTOBIOGRAPHY BEGINS***********************************************************************************************************/
+.sectionBiography{
+    background-color:#C2CAD0;
+    border: 0.5px solid black;
+    height: 500px;
+    width: 100%;
+}
+
+.image-area
+{
+	top: 150%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    position: absolute;
+    height: 250px;
+}
+
+.img-wrapper
+{
+	width: 300px;
+	height: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
+.img-wrapper:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 180%;
+	height: 100%;
+	width: 100%;
+	background: rgba(255,255,255,.3);
+	z-index: 1;
+	transform: skew(-60deg);
+	transition: .5s;
+}
+
+.img-wrapper:hover:before
+{
+	left: -180%;
+}
+
+.img-wrapper img
+{
+	height: 400px;
+	width: 300px;
+	filter: grayscale(100%);
+	transition: 2s;
+}
+.img-wrapper:hover img
+{
+	filter: grayscale(0%);
+    transform: scale(0.5) translateY(-20%);
+}
+
+.img-wrapper h2
+{
+	background: tomato;
+	font-family: Poppins;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 10px 0;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	transform: perspective(400px) rotateY(90deg);
+	transform-origin: right;
+	transition: 1s;
+}
+
+.img-wrapper:hover h2
+{
+	transform: perspective(400px) rotateY(0deg);
+}
+
+.img-wrapper ul
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li
+{
+	background: #333;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+	line-height: 40px;
+	transform: perspective(800px) rotateY(90deg);
+	transition: .5s;
+	transform-origin: left;
+}
+
+.img-wrapper:hover ul li
+{
+	transform: perspective(800px) rotateY(0deg);
+}
+
+.img-wrapper:hover ul li:nth-child(1)
+{
+	transition-delay: .2s;
+}
+
+.img-wrapper:hover ul li:nth-child(2)
+{
+	transition-delay: .6s;
+}
+
+.img-wrapper:hover ul li:nth-child(3)
+{
+	transition-delay: .8s;
+}
+
+.img-wrapper:hover ul li:nth-child(4)
+{
+	transition-delay: 1s;
+}
+
+.img-wrapper ul li a
+{
+	color: tomato;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li i
+{
+	color: tomato;
+	background: rgba(255,255,255,0);
+}
+
+.img-wrapper ul li i:hover
+{
+	color: #fff;
+	background: rgba(255,255,255,0);
+}
+
+
+/* SECTION AUTOBIOGRAPHY ENDS***********************************************************************************************************/

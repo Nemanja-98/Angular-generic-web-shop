@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-landing-page',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageComponent implements OnInit {
 
+  faInstagram = faInstagram;
+  faGitHub = faGithub;
   constructor() { }
 
   ngOnInit(): void {
