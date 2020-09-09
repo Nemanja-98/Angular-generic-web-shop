@@ -21,7 +21,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdModalConfig } from './components/modal-config/modal-config.component';
 import { OrderComponent } from './components/order/order.component';
 import { UserComponent } from './components/user/user.component';
-import { UsernameService} from './components/user/username.service'
+import { UsernameService} from './components/user/username.service';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +35,8 @@ import { UsernameService} from './components/user/username.service'
     NgbdModalConfig,
     OrderComponent,
     UserComponent,
+    LandingPageComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { UsernameService} from './components/user/username.service'
     StoreModule.forRoot({ shop: ShopReducer }),
     EffectsModule.forRoot([ShopEffects]),
     NgbModule,
+    FontAwesomeModule,
   ],
   providers: [
     UsernameService

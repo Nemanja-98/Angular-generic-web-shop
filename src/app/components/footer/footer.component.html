@@ -1,0 +1,41 @@
+<div [ngClass]="['divFooter']">
+    <div [ngClass]="['divZaprati']">
+        <label [ngClass]="['lZaprati']">
+            You can follow us on:
+        </label>
+    </div>
+
+    <div [ngClass]="['social-icon']">
+        <ul [ngClass]="['ulSocial-network', 'container']">
+            <li [ngClass]="['col-3']"> 
+                <a href="https://www.facebook.com/" target="_blank" [ngClass]="['fa', 'fa-facebook']">
+                    <fa-icon [icon]="faFacebook"></fa-icon>
+                    Facebook
+                </a>
+            </li>
+            <li [ngClass]="['col-3']">
+                <a href="https://www.youtube.com/" target="_blank" [ngClass]="['fa', 'fa-youtube-play']">
+                    <fa-icon [icon]="faYoutube"></fa-icon>
+                    Youtube
+                </a>
+            </li>
+            <li [ngClass]="['col-3']">
+                <a href="https://www.instagram.com/" target="_blank" [ngClass]="['fa', 'fa-instagram']">
+                    <fa-icon [icon]="faInstagram"></fa-icon>
+                    Instagram
+                </a>
+            </li>
+            <li [ngClass]="['col-3']">
+                <a href="https://www.gmail.com/" target="_blank" [ngClass]="['fa', 'fa-google-plus']">
+                    <fa-icon [icon]="faGmail"></fa-icon>
+                    Gmail
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div [ngClass]="['divPrava']">
+        © FruitStore. All rights reserved.<br />
+        Designed by NM
+    </div>
+</div>

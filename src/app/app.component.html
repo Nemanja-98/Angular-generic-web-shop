@@ -1,11 +1,7 @@
-<div>
+<div [ngClass]="'divAppContainer'">
     <app-header ></app-header>
-    <app-home *ngIf="_router.url != '/order'"></app-home>
-    
-    <!-- route /order -->
-    <!-- <app-order></app-order> -->
-    <div *ngIf="_router.url == '/order'">
     <router-outlet></router-outlet>
+    <div [ngClass]="['divFooter']">
+        <app-footer></app-footer>
     </div>
-    <!-- <app-user></app-user> -->
 </div>

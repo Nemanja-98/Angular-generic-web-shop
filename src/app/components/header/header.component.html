@@ -6,10 +6,19 @@
   <div class="nav">
     <ul>
       <li>
+        <a [routerLink]="''">Home</a>
+      </li>
+      <li>
+        <a [routerLink]="'shop'">Store</a>
+      </li>
+      <li>
+        <a [routerLink]="'profile'">Profile</a>
+      </li>
+      <li *ngIf="isLoggedIn">
         <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container"></app-user>
       </li>
       <li>
-        <ngbd-modal-config *ngIf="!isLoggedIn"text="Log in" class="modalLogin">
+        <ngbd-modal-config *ngIf="!isLoggedIn" text="Log in" class="modalLogin">
         </ngbd-modal-config>
       </li>
       <li>
