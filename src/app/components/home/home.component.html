@@ -1,20 +1,55 @@
-<main>
-    <!-- <section class="banners">
-      <div>
-        <img src="/assets/images/fruits.jpeg" alt="Apples in a bunch" />
-      </div>
-      <div>
-        <img src="/assets/images/berry.jpeg" alt="A bunch of berries" />
-      </div>
-      <div>
-        <img src="/assets/images/banner-1.jpeg" alt="Slushy oranges" />
-      </div>
-      <div>
-        <img src="/assets/images/banner-2.jpeg" alt="A diverse set of fruits" />
-      </div>
-    </section> -->
+<main class="container">
+  <div class="containerPage">
+
+    <div class="  ">
+      <section class="container sectionFilters">
+        <div class="row divFilters">
+          <h2 class="h2Filters">
+            Filters <span class="filterIkonica"></span>
+          </h2>
+        </div>
+        <h3 class="row naslovFilter2">Price</h3>
+        <div class="filterCena">
+          <div class="container dvaSlajdera">
+            <div class="row">
+              <label class="col-3">From:</label>
+              <input class="col-3 inputMin" type="number" min="0" defaultValue="0" max="60" step="1" />
+            </div>
+            <div class="row">
+              <label class="col-3 doCena">To:</label>
+              <input class="col-3 inputMax" type="number" defaultValue="60" min="0" max="60" step="1" />
+            </div>
+          </div>
+        </div>
+        <h3 class="row naslovFilter2">Type</h3>
+        <div class="filterVrsta">
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Pomes
+          </label>
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Drupes
+          </label>
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Berries
+          </label>
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Melons
+          </label>
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Citrus
+          </label>
+          <label class="row">
+            <input class="inputCbType" type="checkbox" /> Tropical
+          </label>
+        </div>
+
+      </section>
+    </div>
+
     <section class="product-area">
       <h2>Product area</h2>
       <app-product-list [products]="items"></app-product-list>
     </section>
-  </main>
+
+  </div>
+</main>

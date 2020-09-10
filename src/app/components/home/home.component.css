@@ -1,23 +1,110 @@
 main{
-    width: 90%;
-    margin: auto;
-    padding: 30px 15px;
+    min-width: 100%;
+    margin: 0;
+    
     padding-top: 120px;
 }
-.banners{
+.containerPage{
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.product-area{
+    max-width: 100%;
+    min-height: 1000px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+.product-area{
+    min-width: 100%;
+}
+
+}
+
+@media only screen and (max-width: 820px) {
+.product-area{
+    position: absolute;
+    top: 600px;
+    left: 1%;
+    right: 5%;
+}
+.divSectionFilters, .sectionFilters{
+    max-width: 100% !important;
+    position: absolute !important;
+    right: 20% !important;
+    width: 80% !important;
+
+}
+
+
+}
+/*FILTERI BEGINS*/
+.divSectionFilters{
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+    max-width: 30%;
+    height: 50%;
+    background-color: none !important;
+    border: 0px;
+    word-wrap: none;
+
+}
+.col-3 .divSectionFilters .card{
+    background-color: none !important;
+}
+.sectionFilters{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    float: left;
+
+    background: linear-gradient(328deg, #ffffff, #e4e4e4);
+    background-size: 400% 400%;
+
+    animation: FiltersGradient 20s ease infinite;
+}
+@keyframes FiltersGradient {
+    0%{background-position:0% 46%}
+    50%{background-position:100% 55%}
+    100%{background-position:0% 46%}
+}
+
+
+.divFilters{
     justify-content: center;
 }
-div{
-    width: 26%;
-    margin-right: 10px;
+
+.inputMin, .inputMax{
+    outline: none;
+    border: none;
+    background-color: #e4e4e4;
 }
-img{
-    height: 200px;
+
+.inputCbType{
+    margin-left: 25px;
+}
+/*FILTERI ENDS*/
+/* For mobile phones: */
+[class*="col-"] {
     width: 100%;
-    max-width: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-}
-      
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }

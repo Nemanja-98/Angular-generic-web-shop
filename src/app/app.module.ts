@@ -25,6 +25,7 @@ import { UsernameService} from './components/user/username.service';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     EffectsModule.forRoot([ShopEffects]),
     NgbModule,
     FontAwesomeModule,
+    NgxPaginationModule,
   ],
   providers: [
     UsernameService

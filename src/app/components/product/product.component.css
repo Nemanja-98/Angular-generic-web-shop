@@ -1,12 +1,13 @@
 .product{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-bottom: 5px;
     margin-top: 5px;
 }
 .product-image-holder{
     align-self: stretch;
     padding: 2px ;
+    margin-right: 10px;
 }
 
 .product-image{
