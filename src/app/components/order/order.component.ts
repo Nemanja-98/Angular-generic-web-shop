@@ -27,10 +27,27 @@ export class OrderComponent implements OnInit {
 
   btnConfirm(){
     this.contents = [];
-    this.total = 0; 
+    this.total = 0;
     setTimeout(() => {
-      this.router.navigate([''])  
-    }, 1000);
+      const sign = document.querySelector(".h2Empty");
+      sign.innerHTML = "Thank you for your purchase!";
+      const divBadge = document.querySelector(".badge-danger");
+      divBadge.classList.remove("badge-danger");
+      divBadge.classList.add("badge-success");
     
+    }, 10);
+    
+    setTimeout(() => {
+      this.router.navigate(['']) 
+    }, 3000);
+    
+  }
+
+  btnCancel(){
+    this.contents = [];
+    this.total = 0;
+    setTimeout(() => {
+      this.router.navigate(['']) 
+    }, 1000);
   }
 }

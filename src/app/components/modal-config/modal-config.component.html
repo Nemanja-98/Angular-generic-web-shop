@@ -13,8 +13,9 @@
         <label class="col-3">Password:</label>
         <input type='password' class="inputPassowrd col-6" placeholder="enter password here"/>
        </div>
+       <button type="button" class="btnRegister btn btn-success" (click)="logIn()">Log In</button>
       </div>
-      
+
       <ng-template #elseBlock>
         <div class="divSignUp container">
           <label  class="col-3">Username:</label>
@@ -28,11 +29,12 @@
           <label class="col-3">Phone:</label>
           <input type='text' class="inputPhone col-6" placeholder="enter phone number here" />
         </div>
+        <button type="button" class="btnRegister btn btn-success" (click)="register()">Register</button>
       </ng-template>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-success" (click)="newMessage()">Save</button>
-      <button type="button" class="btn btn-danger" (click)="d('Cross click')">Canel</button>
+      <!-- <button type="button" class="btn btn-success" (click)="d('Cross click')">Save</button> -->
+      <!-- <button type="button" class="btn btn-danger" (click)="d('Cross click')">Canel</button> -->
     </div>
   </ng-template>
 

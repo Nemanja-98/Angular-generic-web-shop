@@ -25,4 +25,23 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new GetItems());
   }
+
+  // filterClick(event) {
+  //   event.target.className === "filterOn"
+  //     ? (event.target.className = "filterOff")
+  //     : (event.target.className = "filterOn");
+  //   this.filterDisplay();
+  // }
+
+  filterDisplay(){
+    
+    const filters = document.querySelector(".filterVrsta");
+    console.log("display filter",filters.childNodes[1].childNodes[0]);
+    let nizVrsta = [];
+    filters.childNodes.forEach(el => {
+     // if(el.childNodes[0].checked)
+        nizVrsta.push() //gruni text sto je  pored checkbox u niz.
+    });
+
+  }
 }

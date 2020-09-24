@@ -129,9 +129,13 @@ img {
 }
 
 .modalLogin{
-    z-index: 9999;
+    z-index: 999999999999;
 }
 
 .modalSignup{
-    z-index: 9999;
+    z-index: 9999999999;
+}
+
+.header{
+    z-index: 1000;
 }

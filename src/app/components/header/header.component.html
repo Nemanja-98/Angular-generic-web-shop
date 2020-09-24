@@ -1,10 +1,13 @@
-<header>
+<header class="header">
   <div  class="brand">
     <img [routerLink]="''" src="../../../assets/images/logo.png" class="imgLogo" alt="avatar" />
     <h5 [routerLink]="''">The Fruit Basket</h5>
   </div>
   <div class="nav">
     <ul>
+      <li >
+        <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container"></app-user>
+      </li>
       <li>
         <a [routerLink]="''">Home</a>
       </li>
@@ -14,14 +17,12 @@
       <li>
         <a [routerLink]="'profile'">Profile</a>
       </li>
-      <li *ngIf="isLoggedIn">
-        <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container"></app-user>
-      </li>
-      <li>
+      
+      <li class="modalLogin">
         <ngbd-modal-config *ngIf="!isLoggedIn" text="Log in" class="modalLogin">
         </ngbd-modal-config>
       </li>
-      <li>
+      <li class="modalSignup">
         <ngbd-modal-config *ngIf="!isLoggedIn" text="Sign up" class="modalSignup">
         </ngbd-modal-config>
       </li>

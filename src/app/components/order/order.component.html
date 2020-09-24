@@ -3,7 +3,7 @@
         <h2>Finalize order</h2>
     </div>
     <div class="row badge badge-danger" *ngIf="contents.length==0">
-        <h2>Oh it seems your cart is empty...</h2>
+        <h2 class="h2Empty">Oh it seems your cart is empty...</h2>
     </div>
     <div class="row">
         <div class="col-4">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="">
-            <button (click)="btnConfirm()" class="btn-danger">Cancel purchase</button>
+            <button (click)="btnCancel()" class="btn-danger">Cancel purchase</button>
         </div>
     </div>
 </div>
