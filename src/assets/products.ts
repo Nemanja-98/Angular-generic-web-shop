@@ -8,6 +8,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/berries.jpg",
     "description": "The bestest fruit known to man. Sweet yet sour but beautiful",
     "quantity": 1,
+    "category": " Berries ",
   },
   {
     "name": "Orange",
@@ -15,6 +16,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/oranges.jpg",
     "description": "Succulent and watery, you'll never run out of water",
     "quantity": 1,
+    "category": " Drupes ",
   },
   {
     "name": "Lemons",
@@ -22,6 +24,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/lemons.jpg",
     "description": "Sour but important for revitalization",
     "quantity": 1,
+    "category": " Citrus ",
   },
   {
     "name": "Bananas",
@@ -29,6 +32,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/banana.jpg",
     "description": "An every day fruit, can be served with every dish",
     "quantity": 1,
+    "category": " Tropical "
   },
   {
     "name": "Apples",
@@ -36,6 +40,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/apple-item.jpg",
     "description": "Sliced and served with your salad. Served as snacks midway through the day",
     "quantity": 1,
+    "category": " Pomes ",
   },
   {
     "name": "Sharifa",
@@ -43,6 +48,7 @@ const staticArray = [ //:Product[] = [
     "image": "/assets/images/unknown.jpg",
     "description": "A great fruit, also known as custard apple",
     "quantity": 1,
+    "category": "Melons ",
   }
 ];
 

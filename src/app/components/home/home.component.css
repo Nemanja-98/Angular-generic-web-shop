@@ -14,12 +14,16 @@ main{
     max-width: 100%;
     min-height: 1000px;
     margin-bottom: 50px;
-    padding-left: 20px;
+    margin-left: 200px;
 }
 
 @media only screen and (max-width: 1000px) {
+    .sectionFilters{
+        width: 200px;
+    }
 .product-area{
     min-width: 100%;
+    margin-left: 0px;
 }
 
 }
@@ -27,9 +31,11 @@ main{
 @media only screen and (max-width: 820px) {
 .product-area{
     position: absolute;
-    top: 600px;
+    top: 400px;
     left: 1%;
     right: 5%;
+    margin-left: 0px;
+    padding-bottom: 100px;
 }
 .divSectionFilters, .sectionFilters{
     max-width: 100% !important;
