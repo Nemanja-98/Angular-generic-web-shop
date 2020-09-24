@@ -139,3 +139,11 @@ img {
 .header{
     z-index: 1000;
 }
+.liUserComp{
+    height: 30px;
+    max-height: 30px;
+    overflow: hidden;
+    width: 150px;
+    padding-top: 5px;
+
+}

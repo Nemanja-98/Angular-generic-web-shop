@@ -21,10 +21,26 @@ app.get('/products', (req, res) => {
   res.json(products);
 });
 
+app.get('/users', async (req, res) => {
+  const data = await fs.readFile('../users.json') 
+  const users = JSON.parse(data);
+  res.json(users); 
+});
+
+app.delete('/users/:username', async (req, res) => {
+  const data = await fs.readFile('../users.json') 
+  let users = JSON.parse(data);
+  users = users.filter( el => el.username!=req.params.username);
+  // console.log(users);
+  // console.log(req.params);
+  await fs.writeFile('../users.json', JSON.stringify(users));
+  res.sendStatus(200); 
+});
+
 app.post('/register', async (req, res) => {
 
-  const data = await fs.readFile('../users.json') //, 'utf8', function readFileCallback(err, data) {
-  const users = JSON.parse(data); //now it an object
+  const data = await fs.readFile('../users.json') 
+  const users = JSON.parse(data); 
   console.log("parse", users);
   const exists = users.find(item => item.username === req.body.username);
   if (!exists) {

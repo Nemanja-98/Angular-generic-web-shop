@@ -5,8 +5,8 @@
   </div>
   <div class="nav">
     <ul>
-      <li >
-        <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container"></app-user>
+      <li class="liUserComp">
+        <app-user [signedOut] = "isLoggedIn" (newUsernameEvent)="loggedIn($event)" class="container liUserComp"></app-user>
       </li>
       <li>
         <a [routerLink]="''">Home</a>

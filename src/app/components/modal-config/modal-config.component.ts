@@ -1,6 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsernameService} from '../user/username.service'
+import { Store} from '@ngrx/store';
+
+import * as actions from '../user/user.actions';
+import * as fromUser from '../user/user.reducer';
 import axios from 'axios'
 @Component({
   selector: 'ngbd-modal-config',
@@ -13,7 +17,7 @@ export class NgbdModalConfig {
   username: string;
   password: string;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private us: UsernameService) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private us: UsernameService,private store:Store<fromUser.State>,) {
     // customize default values of modals used by this component tree
     config.backdrop = 'static';
     config.keyboard = false;
@@ -58,6 +62,17 @@ export class NgbdModalConfig {
       "address":  adress,
       "phone":   phone
     }
+
+    const user1 : fromUser.User = {
+      id: new Date().getUTCMilliseconds().toString(),
+      username: username,
+      password: password,
+      address: adress,
+      phone: phone
+    }
+    console.log("dispecujem");
+    this.store.dispatch( new actions.Create(user1));
+
     const res = await axios.post('http://localhost:4000/register', payload);
     if(res.data.message){
       alert(res.data.message);

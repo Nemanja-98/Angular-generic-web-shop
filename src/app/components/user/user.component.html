@@ -1,12 +1,16 @@
 <div class="container">
-    <div class="" *ngIf="signedOut">
-        <label *ngIf="username!=''"class="badge badge-success">Username:{{username}}</label>
+    <div class="" *ngIf="!signedOut">
+        <label *ngIf="username!=''" class="badge badge-success">Username:{{username}}</label>
     </div>
-    <!-- <div *ngFor='let user of users'>
-        <div>{{user.username}}</div>
-        <div>{{user.password}}</div>
-        <button (click)="updateUser(user.id,user.username,user.password+1)">Update User</button>
-        <button (click)="deleteUser(id)">Delete User</button>
-    </div> -->
-    <!-- <button (click)="createUser(123,123456)">Create new Dummy User</button> -->
+    <div class="userList">
+        <div class="" *ngFor='let user of users | async'>
+            <input [ngClass]="user.username" type="text" disabled="true"  placeholder="{{user.username}}"/>
+            <input id="{{user.id+user.username}}"  class="{{user.id+user.username}}" type="text" placeholder="{{user.password}}" />
+            <div>{{user.username}}</div>
+            <div>{{user.password}}</div>
+            <button (click)="updateUser(user.id,user.username)">Update User</button>
+            <button (click)="deleteUser(user.id,user.username)">Delete User</button>
+        </div>
+    </div>
+
 </div>

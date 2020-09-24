@@ -1,11 +1,12 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 //import { Observable} from 'rxjs/Observable';
-import { Store} from '@ngrx/store';
+import { Store, select} from '@ngrx/store';
 
 import * as actions from './user.actions';
 import * as fromUser from './user.reducer'
 import { Observable } from 'rxjs';
 import { UsernameService } from './username.service';
+import axios from 'axios';
 
 
 @Component({
@@ -22,8 +23,9 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     this.users = this.store.select(fromUser.selectAll);
+    console.log("users",this.users);
     this.us.currentUsername.subscribe(username => { 
-      this.createUser(username,'123');
+      //this.createUser(username,'123');
       this.username = username})
   }
 
@@ -31,7 +33,9 @@ export class UserComponent implements OnInit {
     const user : fromUser.User = {
       id: new Date().getUTCMilliseconds().toString(),
       username: username,
-      password: password
+      password: password,
+      address: "",
+      phone: ""
     }
     
     console.log("createUser",username);
@@ -39,13 +43,17 @@ export class UserComponent implements OnInit {
     this.store.dispatch( new actions.Create(user));
   }
 
-  updateUser(id,username,password){
+  updateUser(id,username){
     console.log("updateUser");
+    const selector =id+username;
+    const input :any = document.getElementById(selector);
+    console.log("passowrd input",input.value,typeof(input));
     this.newUsernameEvent.emit(username);
-    this.store.dispatch( new actions.Update( id,{username:username,password:password}));
+    this.store.dispatch( new actions.Update( id,{username:username,password:input.value}));
   }
 
-  deleteUser(id){
+  async deleteUser(id,username){
     this.store.dispatch(new actions.Delete(id));
+    await axios.delete(`http://localhost:4000/users/${username}`);
   }
 }

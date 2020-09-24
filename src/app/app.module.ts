@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component'; // <-- NgModel lives here
 
 import { ShopReducer } from './store/reducer';
+import { userReducer } from './components/user/user.reducer';
 
 import { EffectsModule } from '@ngrx/effects';
 import { ShopEffects } from './store/effects';
@@ -44,7 +45,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ shop: ShopReducer }),
+    StoreModule.forRoot({ shop: ShopReducer, user : userReducer}),
     EffectsModule.forRoot([ShopEffects]),
     NgbModule,
     FontAwesomeModule,
